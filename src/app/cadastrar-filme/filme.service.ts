@@ -16,7 +16,7 @@ export class FilmeService {
         return this.httpClient.post<Filme>('http://localhost:8080/testePersistence/persistir-filme', filme)
     }
 
-    consultarFilme(id: string){
+    consultarFilme(id: number){
         return this.httpClient.get<Filme>(`http://localhost:8080/testePersistence/consultar-filme?id=${id}`)
     }
 }

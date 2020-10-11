@@ -2,12 +2,12 @@
 <form #f="ngForm" (ngSubmit)="onSubmit(f)">
     <label>Id do Filme:</label>
     <br />
-    <input type="text" name="id" ngModel>
+    <input type="number" name="id" [(ngModel)]="id">
     <br />
 
     <button type="submit">Pesquisar</button>
 </form>
-<div>
+<div *ngIf="filme != null">
     <h1>Filme Encontrado: {{filme.nome}}</h1>
     <br>
     <label>Genero: {{filme.genero}}</label>

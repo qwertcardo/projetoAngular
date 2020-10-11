@@ -11,6 +11,7 @@ export class ConsultarFilmeComponent implements OnInit {
 
   filmeService: FilmeService;
 
+  id: number;
   filme: Filme;
 
   constructor(filmeService: FilmeService) { 
@@ -18,14 +19,15 @@ export class ConsultarFilmeComponent implements OnInit {
   }
 
   ngOnInit(): void {
+
   }
 
   onSubmit(form){
-    let id: string = form.value.id;
+    let id: number = form.value.id;
 
     this.filmeService.consultarFilme(id).subscribe(dados => {
-     this.filme = dados;   
+     this.filme = dados;
+     console.log(dados)
     })
   }
-    
 }
